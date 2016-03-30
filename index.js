@@ -34,9 +34,8 @@ module.exports = {
     // http://ember-cli.com/extending/#broccoli-build-options-for-in-repo-addons
     var target = (parentAddon || app);
     target.options = target.options || {}; // Ensures options exists for Scss/Less below
-    // var options = target.options['ember-font-awesome'] || {};
 
-		var normalizePath = path.join(target.bowerDirectory, 'normalize.css');
+		var normalizePath = path.join(target.bowerDirectory, 'normalize-css');
 
 		if (!fs.existsSync(normalizePath)){
       throw new Error(
@@ -48,4 +47,3 @@ module.exports = {
 		target.import(path.join(normalizePath, 'normalize.css'));
 	}
 };
-
